@@ -10,25 +10,18 @@ const aboutRoute = require("./routes/about.js");
 /* --- Serve Static Files --- */
 app.use("/static", express.static("public"));
 
+/*--- Routing in Express ---*/
 app.use("/", indexRoute);
 app.use("/about", aboutRoute);
 
-app.get("/", (req, res) => {
-  res.send("<h1>Wow! Exercise Three!!</h1>");
-});
+app.listen(port, () => console.log("Exercise Three is running!"));
+// .listen takes parameters port and callback function
+// this will run in the console when started
+
 
 
 /*
-takes two parameters: route and callback function
-regular hmtl cannot be sent
 Node requires html to be sent as a string
-*/
-
-
-// app.listen(port, () => console.log("Exercise Three is running!"));
-/*
-.listen takes parameters port and callback function
-this will run in the console when started
 
 TO START, log this to console:
 node app.js
